@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form with Validation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+
+        .form-container {
+            background: #ffffff;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .form-container h2 {
+            margin-bottom: 20px;
+            text-align: center;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .form-group input[type="radio"] {
+            width: auto;
+            margin-right: 5px;
+        }
+
+        .form-group .gender-options {
+            display: flex;
+            align-items: center;
+        }
+
+        .form-group .gender-options label {
+            margin-right: 15px;
+            font-weight: normal;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 10px 15px;
+            background: #007bff;
+            color: #fff;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+        }
+
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Register</h2>
+        <form id="userForm">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" />
+                <span class="error" id="usernameError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" />
+                <span class="error" id="passwordError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" />
+                <span class="error" id="emailError"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Gender</label>
+                <div class="gender-options">
+                    <label><input type="radio" name="gender" value="Male" /> Male</label>
+                    <label><input type="radio" name="gender" value="Female" /> Female</label>
+                </div>
+                <span class="error" id="genderError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="city">City</label>
+                <select id="city" name="city">
+                    <option value="">Select your city</option>
+                    <option value="New York">Karachi</option>
+                    <option value="Los Angeles">Lahore</option>
+                    <option value="Chicago">Peshawer</option>
+                    <option value="Houston">Islamabad</option>
+                </select>
+                <span class="error" id="cityError"></span>
+            </div>
+
+            <button type="button" class="btn" onclick="submitForm()">Submit</button>
+        </form>
+    </div>
+
+    <script src="app.js"> </script>
+</body>
+</html>
